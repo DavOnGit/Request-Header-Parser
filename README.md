@@ -1,4 +1,6 @@
+[![Website](https://img.shields.io/website-up-down-green-red/https/requestheaderparserms.herokuapp.com%2F.svg?maxAge=2592000)](https://requestheaderparserms.herokuapp.com/)
 [![StackShare](http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat)](http://stackshare.io/DavOnGit/myown)
+[![License](https://img.shields.io/cocoapods/l/AFNetworking.svg)](http://doge.mit-license.org)
 
 # Request Header Parser Microservice
 
@@ -12,7 +14,7 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
 
 ```sh
 $ git clone https://github.com/DavOnGit/Request-Header-Parser.git # or clone your own fork
-$ cd node-mongo-heroku-getting-started
+$ cd Request-Header-Parser
 $ npm install
 $ npm start
 ```

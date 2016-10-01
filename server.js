@@ -2,6 +2,11 @@ const moment = require('moment');
 const express = require('express');
 const app = express();
 
+app.set('strict routing', true);
+app.set('port', (process.env.PORT || 5000));
+app.use(express.static(__dirname + '/public'));
+app.set('json spaces', 4);
+
 app.get('/api/hparser', function(req,res) {
     var loclan = req.headers['accept-language'].match(/^[a-z]{2}/)[0];
     var cli = {
@@ -10,6 +15,10 @@ app.get('/api/hparser', function(req,res) {
         software: req.headers['user-agent'].replace(/^.+\(/,'').replace(/\).+$/,'').replace(/\srv:\d+\.\d+$/,''),
         time: moment().locale(loclan).format('HH:mm:ss - LL'),
     };
+    res.setHeader('Content-Type', 'application/json');
     res.send(cli);
 });
-app.listen(process.env.PORT || 8080);
+
+app.listen( app.get('port'), () => {
+    console.log('listening on port: ' + app.get('port'));
+});
